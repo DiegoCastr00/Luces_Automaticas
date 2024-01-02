@@ -13,7 +13,7 @@ muestraEncender = fft_conjugado;
 
 deviceReader = audioDeviceReader('SamplesPerFrame', muestrasPorCuadro);
 
-while 1 
+while 1
     acquiredAudio = deviceReader();
     if max(abs(acquiredAudio)) > umbralAmplitud
 

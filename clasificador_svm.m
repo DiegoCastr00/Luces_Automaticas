@@ -1,7 +1,8 @@
 clc;
 enciende = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\enciende'; 
 apaga = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\apaga'; 
-otros = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\otros'; 
+otros = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\otros';
+silencio = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\silencio';
 extension = '*.wav';
 
 datos = []; 
@@ -42,6 +43,22 @@ for i = 1:length(archivos_otros)
     datos = [datos; espectro_normalizado];
     etiquetas = [etiquetas; 2];
 end
+
+%Silencio
+archivos_otros = dir(fullfile(silencio, extension));
+for i = 1:length(archivos_otros)
+    archivo = fullfile(silencio, archivos_otros(i).name);
+    [audio, fs_audio] = audioread(archivo);
+    espectro = abs(fft(audio));
+    espectro_normalizado = espectro / max(espectro);
+    espectro_normalizado = transpose(espectro_normalizado);
+    datos = [datos; espectro_normalizado];
+    etiquetas = [etiquetas; 3];
+end
+
+k = 4; 
+modelo_knn = fitcknn(datos, etiquetas, 'NumNeighbors', k);
+save('modelo_knn.mat', 'modelo_knn');
 
 modelo_svm = fitcecoc(datos, etiquetas);
 save('modelo_svm.mat', 'modelo_svm');
