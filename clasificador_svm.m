@@ -13,10 +13,8 @@ archivos_enciende = dir(fullfile(enciende, extension));
 for i = 1:length(archivos_enciende)
     archivo = fullfile(enciende, archivos_enciende(i).name);
     [audio, fs_audio] = audioread(archivo);
-    espectro = abs(fft(audio));
-    espectro_normalizado = espectro / max(espectro);
-    espectro_normalizado = transpose(espectro_normalizado);
-    datos = [datos; espectro_normalizado];
+    resultado = tratamiento(audio);
+    datos = [datos; resultado];
     etiquetas = [etiquetas; 1];
 end
 
@@ -25,22 +23,18 @@ archivos_apaga = dir(fullfile(apaga, extension));
 for i = 1:length(archivos_apaga)
     archivo = fullfile(apaga, archivos_apaga(i).name);
     [audio, fs_audio] = audioread(archivo);
-    espectro = abs(fft(audio));
-    espectro_normalizado = espectro / max(espectro);
-    espectro_normalizado = transpose(espectro_normalizado);
-    datos = [datos; espectro_normalizado];
+    resultado = tratamiento(audio);
+    datos = [datos; resultado];
     etiquetas = [etiquetas; 0];
 end
 
-% Otros
+% Ruido
 archivos_otros = dir(fullfile(otros, extension));
 for i = 1:length(archivos_otros)
     archivo = fullfile(otros, archivos_otros(i).name);
     [audio, fs_audio] = audioread(archivo);
-    espectro = abs(fft(audio));
-    espectro_normalizado = espectro / max(espectro);
-    espectro_normalizado = transpose(espectro_normalizado);
-    datos = [datos; espectro_normalizado];
+    resultado = tratamiento(audio);
+    datos = [datos; resultado];
     etiquetas = [etiquetas; 2];
 end
 
@@ -49,10 +43,8 @@ archivos_otros = dir(fullfile(silencio, extension));
 for i = 1:length(archivos_otros)
     archivo = fullfile(silencio, archivos_otros(i).name);
     [audio, fs_audio] = audioread(archivo);
-    espectro = abs(fft(audio));
-    espectro_normalizado = espectro / max(espectro);
-    espectro_normalizado = transpose(espectro_normalizado);
-    datos = [datos; espectro_normalizado];
+    resultado = tratamiento(audio);
+    datos = [datos; resultado];
     etiquetas = [etiquetas; 3];
 end
 

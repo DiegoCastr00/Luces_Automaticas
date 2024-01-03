@@ -13,17 +13,15 @@ for i = 1:length(archivos_pruebas)
     archivo = fullfile(carpeta_pruebas, archivos_pruebas(i).name);
     [audio, fs_audio] = audioread(archivo);
 
-    espectro = abs(fft(audio));
-    espectro_normalizado = espectro / max(espectro);
-    espectro_normalizado = transpose(espectro_normalizado);
-    
-    datos_prueba = [datos_prueba; espectro_normalizado];
-    
-    etiqueta_predicha = predict(capi_svm, espectro_normalizado);
+    resultado = tratamiento(audio);
+
+    %capi_KNN
+    %capi_svm
+    etiqueta_predicha = predict(capi_KNN, resultado);
     etiquetas_prueba_predichas = [etiquetas_prueba_predichas; etiqueta_predicha];
 end
 
-etiquetas_prueba_predichas
+etiquetas_prueba_predichas;
 
 for i = 1:length(etiquetas_prueba_predichas)
     switch true

@@ -14,10 +14,12 @@ while 1
 
     %capi_KNN
     %capi_svm
+    %modelo_svm
+    %modelo_knn
     resultado_prediccion = predict(capi_KNN, resultado);
     switch true
         case  resultado_prediccion == 0
-            fprintf('Ruido en Capi\n');
+            fprintf('Ruido\n');
         case  resultado_prediccion == 1
             fprintf('Capi: ¿Que pasa?\n');
             recordblocking(grabadora, duracionFoco);
@@ -25,32 +27,30 @@ while 1
             audio = getaudiodata(grabadora);
             resultado = tratamiento(audio);
 
-            %modelo_svm
-            %modelo_knn
             resultado_prediccion = predict(modelo_svm, resultado);
             switch true
                 case  resultado_prediccion == 0
                     if aux == 0
-                       fprintf('--> El foco ya esta apagado\n');
+                       fprintf('El foco ya esta apagado\n');
                     else 
                         aux = 0;
-                        fprintf('--> Foco apagado\n');
+                        fprintf('Foco apagado\n');
                     end
                 case  resultado_prediccion == 1
                     if aux == 1
-                       fprintf('--> El foco ya esta encendido\n');
+                       fprintf('El foco ya esta encendido\n');
                     else
-                        fprintf('--> Foco enciendido\n');
+                        fprintf('Foco enciendido\n');
                         aux = 1;
                     end
                 case  resultado_prediccion == 2
-                    fprintf('Ruido en Foco\n');
+                    fprintf('Ruido\n');
                 case  resultado_prediccion == 3
-                    fprintf('Silencio en Foco\n');
+                    fprintf('Silencio\n');
             end
 
         case  resultado_prediccion == 2
-            fprintf('Silencio en Capi\n');
+            fprintf('Silencio en \n');
     end
 
 end
