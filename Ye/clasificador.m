@@ -1,13 +1,24 @@
 clc;
+% 
+% FocoA = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Ye\enciende_focoA';
+% ApagaA = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Ye\apaga_focoA';
+ 
+% FocoB = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Ye\enciende_focoB';
+% ApagaB = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Ye\apaga_focoB';
 
-FocoA = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Ye\enciende_focoA';
-ApagaA = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Ye\apaga_focoA';
+% otros = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\otros';
+% silencio = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\silencio';
 
-FocoB = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Ye\enciende_focoB';
-ApagaB = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Ye\apaga_focoB';
+%Nancy
+FocoA = 'C:\MatLab\Señales\Luces_Automaticas\Ye\enciende_focoA';
+ApagaA = 'C:\MatLab\Señales\Luces_Automaticas\Ye\apaga_focoA';
 
-otros = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\otros';
-silencio = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\silencio';
+FocoB = 'C:\MatLab\Señales\Luces_Automaticas\Ye\enciende_focoB';
+ApagaB = 'C:\MatLab\Señales\Luces_Automaticas\Ye\apaga_focoB';
+
+otros = 'C:\MatLab\Señales\Luces_Automaticas\otros';
+silencio = 'C:\MatLab\Señales\Luces_Automaticas\silencio';
+
 extension = '*.wav';
 
 datos = []; 

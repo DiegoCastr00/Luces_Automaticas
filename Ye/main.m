@@ -50,7 +50,6 @@ while 1
                     else
                         fprintf('--> El foco B ya esta encendido\n');
                     end
-
                 case  resultado_prediccion == 4
                     if aux_B == 1
                        fprintf('--> Foco B apagado\n');
