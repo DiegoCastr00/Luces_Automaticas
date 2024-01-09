@@ -24,7 +24,6 @@ while 1
 
             audio = getaudiodata(grabadora);
             resultado = tratamiento(audio);
-
             %modelo_svm
             %modelo_knn
             resultado_prediccion = predict(modelo_svm, resultado);
