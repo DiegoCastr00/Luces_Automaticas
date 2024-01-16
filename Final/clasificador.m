@@ -1,21 +1,16 @@
 clc;
 
-FocoA = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\focoA';
-FocoB = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\focoB';
-
-otros = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\otros';
-silencio = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\silencio';
+% FocoA = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\focoA';
+% FocoB = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\focoB';
+% 
+% otros = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\otros';
+% silencio = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\silencio';
 
 %Nancy
-% FocoA = 'C:\MatLab\Señales\Luces_Automaticas\Ye\enciende_focoA';
-% ApagaA = 'C:\MatLab\Señales\Luces_Automaticas\Ye\apaga_focoA';
-% 
-% FocoB = 'C:\MatLab\Señales\Luces_Automaticas\Ye\enciende_focoB';
-% ApagaB = 'C:\MatLab\Señales\Luces_Automaticas\Ye\apaga_focoB';
-% 
-% otros = 'C:\MatLab\Señales\Luces_Automaticas\otros';
-% silencio = 'C:\MatLab\Señales\Luces_Automaticas\silencio';
-
+FocoA = 'C:\MatLab\Señales\Luces_Automaticas\Final\focoA';
+FocoB = 'C:\MatLab\Señales\Luces_Automaticas\Final\focoB';
+ruido = 'C:\MatLab\Señales\Luces_Automaticas\Final\ruido';
+silencio = 'C:\MatLab\Señales\Luces_Automaticas\Final\silencio';
 extension = '*.wav';
 
 datos = []; 
@@ -40,9 +35,9 @@ for i = 1:length(archivos_otros)
     etiquetas = [etiquetas; 2];
 end
 
-archivos_otros = dir(fullfile(otros, extension));
+archivos_otros = dir(fullfile(ruido, extension));
 for i = 1:length(archivos_otros)
-    archivo = fullfile(otros, archivos_otros(i).name);
+    archivo = fullfile(ruido, archivos_otros(i).name);
     [audio, fs_audio] = audioread(archivo);
     resultado = tratamiento(audio);
     datos = [datos; resultado];
@@ -63,7 +58,7 @@ end
 % modelo_knn = fitcknn(datos, etiquetas, 'NumNeighbors', k);
 % save('modelo_knn.mat', 'modelo_knn');
 
-modelo_svm = fitcecoc(datos, etiquetas);
+modelo_svm = fitcecoc(datos, etiquetas, );
 save('modelo_svm.mat', 'modelo_svm');
 
 % modelo_RBF = fitcecoc(datos, etiquetas, 'Learners', templateSVM('KernelFunction', 'rbf'));

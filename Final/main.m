@@ -15,7 +15,6 @@ while 1
     audio = getaudiodata(grabadora);
 
     resultado = tratamiento(audio);
-
     
     resultado_prediccion = predict(ye_svm, resultado);
     switch true
