@@ -5,6 +5,16 @@ clc;
 % 
 % otros = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\otros';
 % silencio = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\silencio';
+<<<<<<< HEAD
+=======
+
+%EDKIR
+FocoA = 'D:\Descargas 2\IPN\5to\Procesamiento de Señales\interfazLuces\Luces_Automaticas\Final\focoA';
+FocoB = 'D:\Descargas 2\IPN\5to\Procesamiento de Señales\interfazLuces\Luces_Automaticas\Final\focoB';
+otros = 'D:\Descargas 2\IPN\5to\Procesamiento de Señales\interfazLuces\Luces_Automaticas\Final\otros';
+silencio = 'D:\Descargas 2\IPN\5to\Procesamiento de Señales\interfazLuces\Luces_Automaticas\Final\silencio';
+
+>>>>>>> a31d0a05b67a1e260a53648e86bf36e34505cd6e
 
 %Nancy
 FocoA = 'C:\MatLab\Señales\Luces_Automaticas\Final\focoA';
