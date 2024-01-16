@@ -1,8 +1,12 @@
 clc;
 
-ye = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\ye'; 
-ruido = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\ye_ruido';
-silencio = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\ye_silencio'; 
+% ye = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\ye'; 
+% ruido = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\ye_ruido';
+% silencio = 'C:\Users\Khoss\Documents\MATLAB\Programas MATHLAB\ProcesamientoSenales\proyecto\Final\ye_silencio'; 
+ye = 'D:\Descargas 2\IPN\5to\Procesamiento de Señales\interfazLuces\Luces_Automaticas\Final\ye';
+ruido = 'D:\Descargas 2\IPN\5to\Procesamiento de Señales\interfazLuces\Luces_Automaticas\Final\ye_ruido';
+silencio = 'D:\Descargas 2\IPN\5to\Procesamiento de Señales\interfazLuces\Luces_Automaticas\Final\ye_silencio';
+
 extension = '*.wav';
 
 %Nancy
